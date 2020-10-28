@@ -1,0 +1,20 @@
+version: "3.7"
+services:
+  web:
+    container_name: zlara
+    image: nimdasx/sf-nginx-php74
+    #restart: unless-stopped
+    ports:
+      - 1187:80
+    volumes:
+      #- ./nginxconf/10-location-root.conf:/opt/docker/etc/nginx/vhost.common.d/10-location-root.conf
+      - ./docker/vhost.conf:/opt/docker/etc/nginx/vhost.conf
+      - .:/app
+    #labels:
+    #  - "traefik.enable=true"
+    #  - "traefik.http.routers.simpeg-api.rule=Host(`simpeg-api.localhost`)"
+    #  - "traefik.http.routers.simpeg-api.entrypoints=web"
+#networks:
+#  default:
+#    external:
+#      name: atsoftnet
