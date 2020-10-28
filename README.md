@@ -3,8 +3,9 @@
 setting pertama kali :  
 1. update composer  
 `docker-compose run --rm -w /app web composer update`  
-2. belum ada info...  
-3. apalagi 3 tambah belum ada...  
+2. kopi file .env.example ke .env  
+3. generate key  
+`docker-compose run --rm -w /app web php artisan key:generate`  
 
 run container  
 `docker-compose up -d`  
